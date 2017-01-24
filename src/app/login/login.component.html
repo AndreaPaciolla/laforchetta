@@ -1,0 +1,7 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+  <!-- We'll add our form controls here -->
+  Your email: <input type="text" formControlName="email">
+  Your password: <input type="text" formControlName="password">
+  <button type="submit">Submit</button>
+  {{myForm.value | json}}
+</form>

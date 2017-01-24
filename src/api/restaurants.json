@@ -1,0 +1,250 @@
+[
+   {
+      "nome":"Muolin Rouge",
+      "tipologia":[
+         "cucina creativa",
+         "braceria",
+         "pizzeria",
+         "sushi",
+         "pesce"
+      ],
+      "via":"piazza durante",
+      "citta":"Milano",
+      "gps":{
+         "lat":45.4886181,
+         "long":9.2237361
+      },
+      "fascia_prezzo":"economico",
+      "review":3,
+      "posti":36,
+      "menus":[
+         {
+            "menu":"menu pizza",
+            "antipasti":[
+               "patatine",
+               "olive fritte"
+            ],
+            "primi":[
+
+            ],
+            "secondi":[
+               "pizza a scelta"
+            ],
+            "allergeni":[
+               "Cereali contenenti glutine",
+               "Crostacei e prodotti a base di crostacei",
+               "Pesce e prodotti a base di pesce",
+               "Arachidi e prodotti a base di arachidi",
+               "Soia e prodotti a base di soia",
+               "Latte e prodotti a base di latte",
+               "Frutta a guscio",
+               "Sedano e prodotti a base di sedano",
+               "Senape e prodotti a base di senape",
+               "Semi di sesamo e prodotti a base di semi di sesamo",
+               "Anidride solforosa e solfiti",
+               "Lupini e prodotti a base di lupini",
+               "Molluschi e prodotti a base di molluschi"
+            ],
+            "bevande":[
+               "acqua",
+               "coca-cola"
+            ],
+            "prezzo":17.00,
+            "sconti":[
+               {
+                  "tipo":"giorno",
+                  "valore":[
+                     "lunedì",
+                     "giovedì"
+                  ],
+                  "sconto":0.20
+               },
+               {
+                  "tipo":"orario",
+                  "valore":[
+                     "19-21"
+                  ],
+                  "sconto":0.1
+               }
+            ]
+         },
+         {
+            "menu":"menu milanese",
+            "antipasti":[
+               "polentina con cervo"
+            ],
+            "primi":[
+               "risotto alla milanese"
+            ],
+            "secondi":[
+               "cotoletta alla milanese"
+            ],
+            "dolci":[
+               "barbajada"
+            ],
+            "allergeni":[
+               "Cereali contenenti glutine",
+               "Crostacei e prodotti a base di crostacei",
+               "Pesce e prodotti a base di pesce",
+               "Arachidi e prodotti a base di arachidi",
+               "Soia e prodotti a base di soia",
+               "Latte e prodotti a base di latte",
+               "Frutta a guscio",
+               "Sedano e prodotti a base di sedano",
+               "Senape e prodotti a base di senape",
+               "Semi di sesamo e prodotti a base di semi di sesamo",
+               "Anidride solforosa e solfiti",
+               "Lupini e prodotti a base di lupini",
+               "Molluschi e prodotti a base di molluschi"
+            ],
+            "bevande":[
+               "acqua",
+               "coca-cola",
+               "caffe"
+            ],
+            "prezzo":45.00,
+            "sconti":[
+               {
+                  "tipo":"giorno",
+                  "valore":[
+                     "martedì",
+                     "mercoledì"
+                  ],
+                  "sconto":0.50
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "nome":"Pipero al Rex",
+      "tipologia":[
+         "cucina creativa",
+         "braceria",
+         "pizzeria"
+      ],
+      "via":"via torino",
+      "citta":"Roma",
+      "gps":{
+         "lat":41.899941,
+         "long":12.496772
+      },
+      "fascia_prezzo":"economico",
+      "review":5,
+      "posti":36,
+      "menus":[
+         {
+            "menu":"menu degustazione",
+            "antipasti":[
+               "patatine",
+               "olive romane"
+            ],
+            "primi":[
+
+            ],
+            "secondi":[
+               "bistecca al sangue",
+               "pizza"
+            ],
+            "allergeni":[
+               "Cereali contenenti glutine",
+               "Crostacei e prodotti a base di crostacei",
+               "Pesce e prodotti a base di pesce",
+               "Arachidi e prodotti a base di arachidi",
+               "Soia e prodotti a base di soia",
+               "Latte e prodotti a base di latte",
+               "Frutta a guscio",
+               "Sedano e prodotti a base di sedano",
+               "Senape e prodotti a base di senape",
+               "Semi di sesamo e prodotti a base di semi di sesamo",
+               "Anidride solforosa e solfiti",
+               "Lupini e prodotti a base di lupini",
+               "Molluschi e prodotti a base di molluschi"
+            ],
+            "bevande":[
+               "acqua",
+               "vino"
+            ],
+            "prezzo":60.00,
+            "sconti":[
+               {
+                  "tipo":"giorno",
+                  "valore":[
+                     "lunedì",
+                     "giovedì"
+                  ],
+                  "sconto":0.20
+               },
+               {
+                  "tipo":"orario",
+                  "valore":[
+                     "19-21"
+                  ],
+                  "sconto":0.1
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "nome":"Ristorante Biancofiore",
+      "tipologia":[
+         "italiana",
+         "pesce",
+         "mediterranea",
+         "zuppe"
+      ],
+      "via":"Corso Vittorio Emanuele II",
+      "citta":"Bari",
+      "gps":{
+         "lat":41.126264,
+         "long":16.871290
+      },
+      "fascia_prezzo":"economico",
+      "review":3.5,
+      "posti":25,
+      "menus":[
+         {
+            "menu":"menu degustazione",
+            "antipasti":[
+               "Tris di tartare e carpacci di pesce",
+               "Flan ai carciofi con burratina e pomodorino secco"
+            ],
+            "primi":[
+               "Spaghetti al riccio di mare",
+               "Cavatelli con pistacchio di bronte e gambero rosso di gallipoli"
+            ],
+            "secondi":[
+               "Tonno rosso in crosta di mandorle e cipolla rossa caramellata in agrodolce"
+            ],
+            "allergeni":[
+               "Cereali contenenti glutine",
+               "Pesce e prodotti a base di pesce",
+               "Semi di sesamo e prodotti a base di semi di sesamo"
+            ],
+            "bevande":[
+               "acqua",
+               "vino"
+            ],
+            "prezzo":40.00,
+            "sconti":[
+               {
+                  "tipo":"giorno",
+                  "valore":[
+                     "lunedì",
+                     "giovedì"
+                  ],
+                  "sconto":0.20
+               },
+               {
+                  "tipo":"orario",
+                  "valore":[
+                     "19-21"
+                  ],
+                  "sconto":0.1
+               }
+            ]
+         }
+      ]
+   }
+]
