@@ -4,7 +4,11 @@
 
 Prenota ora
 <ng2-datepicker [(ngModel)]="dateSelected"></ng2-datepicker>
-{{dateSelected|json}}
+{{dateSelected|json}}<br>
+19:00-21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="19" checked />
+oltre 21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="21" />
+<br>
+<button (click)="addReservation(dateSelected, reservationTimeframe)">Prenota</button>
 <br><br>
 Leggi il menu in:
 <button *ngFor="let lang of supportedLangs"

@@ -3,6 +3,14 @@ import {RestaurantDetailsService} from "./restaurant-details.service";
 import {ActivatedRoute} from "@angular/router";
 import { TranslateService } from '../translate/translate.service'
 
+interface IDatePicker {
+  day: string;
+  month: string;
+  year: string;
+  formatted: string;
+  momentObj: string;
+}
+
 @Component({
   selector: 'app-restaurant-details',
   templateUrl: './restaurant-details.component.html',
@@ -14,6 +22,7 @@ export class RestaurantDetailsComponent implements OnInit {
   public restaurant: Object;
   public supportedLangs: any;
   public translatedText: string;
+  public reservations: any;
 
   constructor(private restaurantsService: RestaurantDetailsService, private route: ActivatedRoute, private _translate: TranslateService) { }
 
@@ -47,6 +56,35 @@ export class RestaurantDetailsComponent implements OnInit {
   refreshText() {
     // refresh translation when language change
     this.translatedText = this._translate.instant('hello world');
+  }
+
+  addReservation(date: IDatePicker, timeframe: any) {
+    // take all the reservation done
+    this.reservations = JSON.parse(localStorage.getItem('reservations'));
+
+    // Check if there are no reservation yet
+    if(this.reservations == null) {
+      // If so, initialize a new empty array
+      this.reservations = [];
+    }else{
+      // otherwise check if there is another equal reservation
+      let reservationsSameRestaurantSameTimeframe = this.reservations.filter( reservation => {
+        return reservation.restaurant == this.restaurant.slug && reservation.timeframe == timeframe;
+      });
+      if(reservationsSameRestaurantSameTimeframe.length > 0) {
+        // If so, then no reservation can be done. Restaurant is full.
+        alert(this.restaurant.nome + " is full at " + timeframe);
+        return;
+      }
+    }
+
+    this.reservations.push({
+      user: JSON.parse(localStorage.getItem('logged_user_email')),
+      timeframe: timeframe,
+      restaurant: this.restaurant.slug
+    });
+
+    localStorage.setItem('reservations', JSON.stringify(this.reservations));
   }
 
 }

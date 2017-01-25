@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
   save(model: User, isValid: boolean) {
     this.submitted = true; // set form submit to true
     if (typeof(Storage) !== "undefined") {
-      localStorage.setItem("user_email", model.email);
-      localStorage.setItem("password", model.password);
+      localStorage.setItem("logged_user_email", model.email);
+      localStorage.setItem("logged_user_password", model.password);
       this.router.navigate(['/restaurants']);
     } else {
       // Sorry! No Web Storage support..
