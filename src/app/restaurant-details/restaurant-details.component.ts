@@ -30,7 +30,7 @@ export class RestaurantDetailsComponent implements OnInit {
       { display: 'Italiano', value: 'it' }
     ];
 
-    this.selectLang('es');
+    this.selectLang('it');
   }
 
   isCurrentLang(lang: string) {

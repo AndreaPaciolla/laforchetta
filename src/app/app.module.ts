@@ -15,13 +15,15 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
 import { TRANSLATION_PROVIDERS } from './translate/translations';
 import {TranslatePipe} from "./translate/translate.pipe";
 import {TranslateService} from "./translate/translate.service";
-import { RegistrationComponent } from './registration/registration.component';
 import {RestaurantNameFilter} from "./restaurants/restaurants.pipe";
+import { UserDetailsComponent } from './user-details/user-details.component';
+import {DatePickerModule} from "ng2-datepicker/index";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'restaurants', component: RestaurantsComponent, pathMatch: 'full' },
   { path: 'restaurant-details/:id', component: RestaurantDetailsComponent, pathMatch: 'full' },
+  { path: 'user-details/:id', component: UserDetailsComponent, pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   // { path: 'restaurant/:id',      component: RestaurantDetailsComponent },
@@ -36,14 +38,15 @@ const appRoutes: Routes = [
     RestaurantDetailsComponent,
     TranslatePipe,
     RestaurantNameFilter,
-    RegistrationComponent
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DatePickerModule
   ],
   providers: [
     TRANSLATION_PROVIDERS,

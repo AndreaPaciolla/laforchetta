@@ -2,6 +2,10 @@
 <p><i>{{restaurant.via}}, {{restaurant.citta}}</i></p>
 <p>Posti a sedere {{restaurant.posti}}</p>
 
+Prenota ora
+<ng2-datepicker [(ngModel)]="dateSelected"></ng2-datepicker>
+{{dateSelected|json}}
+<br><br>
 Leggi il menu in:
 <button *ngFor="let lang of supportedLangs"
         (click)="selectLang(lang.value)"
