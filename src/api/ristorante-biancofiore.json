@@ -1,0 +1,62 @@
+{
+  "nome":"Ristorante Biancofiore",
+  "slug": "ristorante-biancofiore",
+  "tipologia":[
+    "italiana",
+    "pesce",
+    "mediterranea",
+    "zuppe"
+  ],
+  "via":"Corso Vittorio Emanuele II",
+  "citta":"Bari",
+  "gps":{
+    "lat":41.126264,
+    "long":16.871290
+  },
+  "fascia_prezzo":"economico",
+  "review":3.5,
+  "posti":25,
+  "menus":[
+    {
+      "menu":"menu degustazione",
+      "antipasti":[
+        "Tris di tartare e carpacci di pesce",
+        "Flan ai carciofi con burratina e pomodorino secco"
+      ],
+      "primi":[
+        "Spaghetti al riccio di mare",
+        "Cavatelli con pistacchio di bronte e gambero rosso di gallipoli"
+      ],
+      "secondi":[
+        "Tonno rosso in crosta di mandorle e cipolla rossa caramellata in agrodolce"
+      ],
+      "allergeni":[
+        "Cereali contenenti glutine",
+        "Pesce e prodotti a base di pesce",
+        "Semi di sesamo e prodotti a base di semi di sesamo"
+      ],
+      "bevande":[
+        "acqua",
+        "vino"
+      ],
+      "prezzo":40.00,
+      "sconti":[
+        {
+          "tipo":"giorno",
+          "valore":[
+            "lunedì",
+            "giovedì"
+          ],
+          "sconto":0.20
+        },
+        {
+          "tipo":"orario",
+          "valore":[
+            "19-21"
+          ],
+          "sconto":0.1
+        }
+      ]
+    }
+  ]
+}

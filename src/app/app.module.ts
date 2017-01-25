@@ -9,19 +9,34 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import {Routes, RouterModule} from "@angular/router";
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
+
+import { TRANSLATION_PROVIDERS } from './translate/translations';
+import {TranslatePipe} from "./translate/translate.pipe";
+import {TranslateService} from "./translate/translate.service";
+import { RegistrationComponent } from './registration/registration.component';
+import {RestaurantNameFilter} from "./restaurants/restaurants.pipe";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  // { path: 'restaurant/:id',      component: RestaurantDetailsComponent },
+  { path: 'restaurants', component: RestaurantsComponent, pathMatch: 'full' },
+  { path: 'restaurant-details/:id', component: RestaurantDetailsComponent, pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
+  // { path: 'restaurant/:id',      component: RestaurantDetailsComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    RestaurantsComponent,
+    RestaurantDetailsComponent,
+    TranslatePipe,
+    RestaurantNameFilter,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +45,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    TRANSLATION_PROVIDERS,
+    TranslateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

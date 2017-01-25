@@ -1,0 +1,51 @@
+<h1>Ristorante: {{restaurant.nome}}</h1>
+<p><i>{{restaurant.via}}, {{restaurant.citta}}</i></p>
+<p>Posti a sedere {{restaurant.posti}}</p>
+
+Leggi il menu in:
+<button *ngFor="let lang of supportedLangs"
+        (click)="selectLang(lang.value)"
+        class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
+  {{ lang.display }}
+</button>
+
+<h2>Menu</h2>
+<div *ngFor="let menu of restaurant.menus">
+  <hr>
+  <h4>{{menu.menu}}</h4>
+
+  <h5>{{'starters' | translate}}</h5>
+  <ul>
+    <li *ngFor="let antipasto of menu.antipasti">{{antipasto}}</li>
+  </ul>
+
+  <h5>{{'main' | translate}}</h5>
+  <ul>
+    <li *ngFor="let primo of menu.primi">{{primo}}</li>
+  </ul>
+
+  <h5>{{'main2' | translate}}</h5>
+  <ul>
+    <li *ngFor="let secondo of menu.secondi">{{secondo}}</li>
+  </ul>
+
+  <h5>{{'drinks' | translate}}</h5>
+  <ul>
+    <li *ngFor="let bevanda of menu.bevande">{{bevanda}}</li>
+  </ul>
+
+  <i>
+    <h5>{{'allergenes' | translate}}</h5>
+    <ul>
+      <li *ngFor="let allergene of menu.allergeni">{{allergene}}</li>
+    </ul>
+  </i>
+
+  <h6>{{'price' | translate}} {{menu.prezzo | currency:'EUR':true}}</h6>
+  <h6>{{'discount' | translate}}</h6>
+  <ul>
+    <li *ngFor="let sconto of menu.sconti">
+      {{'discount' | translate}} <b>{{sconto.tipo}}</b> {{'of' | translate}} {{sconto.sconto*100}}%, {{sconto.valore.join(', ')}}
+    </li>
+  </ul>
+</div>

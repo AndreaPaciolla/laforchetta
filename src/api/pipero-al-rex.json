@@ -1,0 +1,71 @@
+{
+  "nome":"Pipero al Rex",
+  "slug": "pipero-al-rex",
+  "tipologia":[
+     "cucina creativa",
+     "braceria",
+     "pizzeria"
+  ],
+  "via":"via torino",
+  "citta":"Roma",
+  "gps":{
+     "lat":41.899941,
+     "long":12.496772
+  },
+  "fascia_prezzo":"economico",
+  "review":5,
+  "posti":36,
+  "menus":[
+     {
+        "menu":"menu degustazione",
+        "antipasti":[
+           "patatine",
+           "olive romane"
+        ],
+        "primi":[
+
+        ],
+        "secondi":[
+           "bistecca al sangue",
+           "pizza"
+        ],
+        "allergeni":[
+           "Cereali contenenti glutine",
+           "Crostacei e prodotti a base di crostacei",
+           "Pesce e prodotti a base di pesce",
+           "Arachidi e prodotti a base di arachidi",
+           "Soia e prodotti a base di soia",
+           "Latte e prodotti a base di latte",
+           "Frutta a guscio",
+           "Sedano e prodotti a base di sedano",
+           "Senape e prodotti a base di senape",
+           "Semi di sesamo e prodotti a base di semi di sesamo",
+           "Anidride solforosa e solfiti",
+           "Lupini e prodotti a base di lupini",
+           "Molluschi e prodotti a base di molluschi"
+        ],
+        "bevande":[
+           "acqua",
+           "vino"
+        ],
+        "prezzo":60.00,
+        "sconti":[
+           {
+              "tipo":"giorno",
+              "valore":[
+                 "lunedì",
+                 "giovedì"
+              ],
+              "sconto":0.20
+           },
+           {
+              "tipo":"orario",
+              "valore":[
+                 "19-21"
+              ],
+              "sconto":0.1
+           }
+        ]
+     }
+  ]
+}

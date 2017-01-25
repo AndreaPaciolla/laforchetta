@@ -1,6 +1,7 @@
 [
    {
       "nome":"Muolin Rouge",
+      "slug": "moulin-rouge",
       "tipologia":[
          "cucina creativa",
          "braceria",
@@ -118,6 +119,7 @@
    },
    {
       "nome":"Pipero al Rex",
+      "slug": "pipero-al-rex",
       "tipologia":[
          "cucina creativa",
          "braceria",
@@ -187,8 +189,9 @@
       ]
    },
    {
-      "nome":"Ristorante Biancofiore",
-      "tipologia":[
+     "nome":"Ristorante Biancofiore",
+     "slug": "ristorante-biancofiore",
+     "tipologia":[
          "italiana",
          "pesce",
          "mediterranea",
