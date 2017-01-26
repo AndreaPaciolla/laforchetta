@@ -42,6 +42,7 @@ export class RegistrationComponent implements OnInit {
         return;
       }
       // if there isn't... save the user
+      model.id = users[users.length-1].id + 1;
       users.push(model);
       localStorage.setItem('users', JSON.stringify(users));
       this.router.navigate(['/restaurants']);

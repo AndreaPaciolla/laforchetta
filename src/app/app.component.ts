@@ -12,6 +12,7 @@ export class AppComponent {
   constructor() {
 
     let users: Array<IUser> = [{
+      'id': 1,
       'email':'andreapaciolla@gmail.com',
       'password': 'k1',
       'name': 'andrea',
@@ -20,6 +21,7 @@ export class AppComponent {
       'city': 'milano'
     },
     {
+      'id': 2,
       'email':'paolorossi@gmail.com',
       'password': 'k2',
       'name': 'paolo',

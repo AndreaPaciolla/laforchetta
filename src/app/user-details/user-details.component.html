@@ -1,4 +1,41 @@
-<p>Nome: {{user.name}}</p>
-<p>Cognome: {{user.surname}}</p>
-<p>email: {{user.email}}</p>
-<p>Ristoranti preferiti a {{user.city}}</p>
+<a [routerLink]="['/users-overview']">< Come back to users</a>
+<h2>User {{user.name}} {{user.surname}}</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>email</th>
+    <th>Favorites Restaurants</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{user.name}} {{user.surname}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.city}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Reservation information -->
+<div *ngIf="userReservations.length">Previous reservation of this user</div>
+<div *ngIf="!userReservations.length">No reservations by this user yet</div>
+<table *ngIf="userReservations.length">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>When</th>
+    <th>Time</th>
+    <th>Seats</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of userReservations">
+    <td>{{r.user}}</td>
+    <td>{{r.date}}</td>
+    <td>{{r.timeframe}}</td>
+    <td>{{r.pax}}</td>
+  </tr>
+  </tbody>
+</table>
+<!-- ./ end - Reservation information -->
