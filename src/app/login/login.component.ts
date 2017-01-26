@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import {User} from "./user.interface";
+import {IUser} from "./user.interface";
 import {Router} from "@angular/router";
 
 @Component({
@@ -24,17 +24,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  save(model: User, isValid: boolean) {
+  save(model: IUser, isValid: boolean) {
     this.submitted = true; // set form submit to true
+    // check if model is valid
+    // if valid, call API to save customer
     if (typeof(Storage) !== "undefined") {
       localStorage.setItem("logged_user_email", model.email);
-      localStorage.setItem("logged_user_password", model.password);
       this.router.navigate(['/restaurants']);
     } else {
       // Sorry! No Web Storage support..
     }
-    // check if model is valid
-    // if valid, call API to save customer
     console.log(model, isValid);
   }
 

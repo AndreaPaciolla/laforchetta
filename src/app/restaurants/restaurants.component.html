@@ -1,17 +1,25 @@
-<div>
-  Cerca il tuo ristorante
-  <input type="text" id="inputEmail" class="form-control" placeholder="Restaurant name" [(ngModel)]="restaurantName">
-</div>
-
-<div>
-  <div *ngFor="let r of restaurants | restaurantNameFilter:restaurantName">
-    <p><a [routerLink]="['/restaurant-details', r.slug]">Nome: {{r.nome}}</a></p>
-    <p>Cucina: {{r.tipologia.join(', ')}}</p>
-    <p>Dove si trova: {{r.via}}, {{r.citta}}
-      <img width="600" src="https://maps.googleapis.com/maps/api/staticmap?center={{r.gps.lat}},{{r.gps.long}}&zoom=5&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&key=AIzaSyC8rnSbjBy3P64tvUbNxAINvs1hKTTZcuk&markers=color:red%7Clabel:C%7C{{r.gps.lat}},{{r.gps.long}}" alt="Google Map of Albany, NY">
-    </p>
-    <p>Media del menu: {{r.fascia_prezzo}}</p>
-    <p>Rate: {{r.review}}</p>
+<div class="container">
+  <div class="row">
+    <div class="column column-100">
+      <input type="text" id="inputEmail" class="form-control" placeholder="Type restaurant's name" [(ngModel)]="restaurantName">
+    </div>
   </div>
 </div>
 
+<div class="container">
+  <div class="row card" *ngFor="let r of restaurants | restaurantNameFilter:restaurantName">
+    <div class="column column-50">
+      <a [routerLink]="['/restaurant-details', r.slug]">
+        <h4>{{r.nome}}</h4>
+        {{r.tipologia.join(', ')}}<br>
+        {{r.fascia_prezzo}}<br>
+        {{r.review}}/5<br>
+        {{r.posti}} total seats
+      </a>
+    </div>
+    <div class="column column-50">
+      {{r.via}}, {{r.citta}}
+      <img width="600" src="https://maps.googleapis.com/maps/api/staticmap?center={{r.gps.lat}},{{r.gps.long}}&zoom=5&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&key=AIzaSyC8rnSbjBy3P64tvUbNxAINvs1hKTTZcuk&markers=color:red%7Clabel:C%7C{{r.gps.lat}},{{r.gps.long}}" alt="Google Map of Albany, NY">
+    </div>
+  </div>
+</div>

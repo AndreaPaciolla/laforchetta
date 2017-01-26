@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {IUser} from "./login/user.interface";
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Fork!';
+  title = 'La forchetta App!';
 
   constructor() {
+
+    let users: Array<IUser> = [{
+      'email':'andreapaciolla@gmail.com',
+      'password': 'k1',
+      'name': 'andrea',
+      'surname': 'paciolla',
+      'age': 23,
+      'city': 'milano'
+    },
+    {
+      'email':'paolorossi@gmail.com',
+      'password': 'k2',
+      'name': 'paolo',
+      'surname': 'rossi',
+      'age': 30,
+      'city': 'roma'
+    }];
+
     if (typeof(Storage) !== "undefined") {
-      localStorage.setItem("user1", JSON.stringify({'username':'andreapaciolla@gmail.com', 'password': 'k1'}));
-      localStorage.setItem("user2", JSON.stringify({'username':'andrewpacio@gmail.com', 'password': 'k2'}));
+      // store the users
+      localStorage.setItem("users", JSON.stringify(users));
     }
   }
 

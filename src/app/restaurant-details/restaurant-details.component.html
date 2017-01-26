@@ -1,23 +1,73 @@
-<h1>Ristorante: {{restaurant.nome}}</h1>
-<p><i>{{restaurant.via}}, {{restaurant.citta}}</i></p>
-<p>Posti a sedere {{restaurant.posti}}</p>
+<small>
+  <a [routerLink]="['/restaurants']">< Go back to restaurants</a>
+</small>
+<h4>{{restaurant.nome}}</h4>
+<p>
+  <i>{{restaurant.via}}, {{restaurant.citta}}</i><br>
+  Total Seats {{restaurant.posti}}
+</p>
 
-Prenota ora
-<ng2-datepicker [(ngModel)]="dateSelected"></ng2-datepicker>
-{{dateSelected|json}}<br>
-19:00-21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="19" checked />
-oltre 21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="21" />
-<br>
-<button (click)="addReservation(dateSelected, reservationTimeframe)">Prenota</button>
-<br><br>
-Leggi il menu in:
-<button *ngFor="let lang of supportedLangs"
-        (click)="selectLang(lang.value)"
-        class="btn btn-default" [class.btn-primary]="isCurrentLang(lang.value)">
-  {{ lang.display }}
-</button>
+<!-- Reservation information -->
+<div *ngIf="restaurantReservations.length">This restaurant is actually booked on:</div>
+<div *ngIf="!restaurantReservations.length">This restaurant is freely bookable</div>
+<table *ngIf="restaurantReservations.length">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>When</th>
+    <th>Time</th>
+    <th>Seats</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of restaurantReservations">
+    <td>{{r.user}}</td>
+    <td>{{r.date}}</td>
+    <td>{{r.timeframe}}</td>
+    <td>{{r.pax}}</td>
+  </tr>
+  </tbody>
+</table>
+<!-- ./ end - Reservation information -->
 
-<h2>Menu</h2>
+<!-- Reservation form -->
+<div class="container card" *ngIf="isLogged">
+  <div class="row">
+    <div class="column column-100">
+      <h5>Book now</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column column-30">
+      <ng2-datepicker [(ngModel)]="dateSelected"></ng2-datepicker><br>
+    </div>
+    <div class="column column-30">
+      Pax <span><input type="number" min="1" max="{{restaurant.posti}}" [(ngModel)]="reservationPax"></span>
+    </div>
+    <div class="column column-30">
+      19:00-21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="19" checked />
+      oltre 21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="21" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="column column-100">
+      <button class="button button-small button-full-width" (click)="addReservation(dateSelected, reservationTimeframe, reservationPax)">Prenota</button>
+    </div>
+  </div>
+</div>
+<!-- ./ end - Reservation form -->
+
+<div *ngIf="!isLogged">
+  <a [routerLink]="['/login']">Fai il login per prenotare</a>
+</div>
+
+<h2>
+  Menu
+  <button *ngFor="let lang of supportedLangs"
+          (click)="selectLang(lang.value)"
+          class="button button-small" [class.button-clear]="!isCurrentLang(lang.value)">{{ lang.display }}
+  </button>
+</h2>
 <div *ngFor="let menu of restaurant.menus">
   <hr>
   <h4>{{menu.menu}}</h4>

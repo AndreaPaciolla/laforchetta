@@ -1,4 +1,8 @@
-export interface User {
-  email: string; // required with minimum 5 chracters
+export interface IUser {
+  email: string;
   password: string;
+  name?: string;
+  surname?: string;
+  age: number;
+  city: string;
 }
