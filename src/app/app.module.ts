@@ -19,12 +19,16 @@ import {RestaurantNameFilter} from "./restaurants/restaurants.pipe";
 import { UserDetailsComponent } from './user-details/user-details.component';
 import {DatePickerModule} from "ng2-datepicker/index";
 import {CurrentUserService} from "./user/current-user.service";
+import { RegistrationComponent } from './registration/registration.component';
+import { UsersOverviewComponent } from './users-overview/users-overview.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'restaurants', component: RestaurantsComponent, pathMatch: 'full' },
   { path: 'restaurant-details/:id', component: RestaurantDetailsComponent, pathMatch: 'full' },
   { path: 'user-details/:id', component: UserDetailsComponent, pathMatch: 'full' },
+  { path: 'registration', component: RegistrationComponent, pathMatch: 'full' },
+  { path: 'users-overview', component: UsersOverviewComponent, pathMatch: 'full' },
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   //{ path: '**', component: PagenotfoundComponent },
   // { path: 'restaurant/:id',      component: RestaurantDetailsComponent },
@@ -39,7 +43,9 @@ const appRoutes: Routes = [
     RestaurantDetailsComponent,
     TranslatePipe,
     RestaurantNameFilter,
-    UserDetailsComponent
+    UserDetailsComponent,
+    RegistrationComponent,
+    UsersOverviewComponent
   ],
   imports: [
     BrowserModule,

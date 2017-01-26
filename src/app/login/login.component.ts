@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import {IUser} from "./user.interface";
+import {IUser} from "../user/user.interface";
 import {Router} from "@angular/router";
 
 @Component({
@@ -14,7 +14,13 @@ export class LoginComponent implements OnInit {
   public submitted: boolean; // keep track on whether form is submitted
   public events: any[] = []; // use later to display form changes
 
-  constructor(private _fb: FormBuilder, private router: Router) { } // form builder simplify form initialization
+  // form builder simplify form initialization
+  constructor(private _fb: FormBuilder, private router: Router) {
+    if(localStorage.getItem('logged_user_email') != null) {
+      alert("You're already logged-in. Going to restaurants...");
+      this.router.navigate(['/restaurants']);
+    }
+  }
 
   ngOnInit() {
     // the long way

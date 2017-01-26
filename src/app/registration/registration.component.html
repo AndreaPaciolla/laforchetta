@@ -1,0 +1,19 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+  Your name: <input type="text" formControlName="name">
+  Your surname: <input type="text" formControlName="surname">
+  Your email: <input type="text" formControlName="email">
+  Your password: <input type="text" formControlName="password">
+  Your city: <input type="text" formControlName="city">
+  Your age: <input type="number" formControlName="age">
+  <button type="submit">Submit</button>
+  <!--{{myForm.value | json}}-->
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="column column-50 column-offset-25">
+      <div style="text-align:center"><a [routerLink]="['/restaurants']">Or take a look to the restaurants</a></div>
+      <div style="text-align:center"><a [routerLink]="['/users-overview']">...Or maybe to other registered users</a></div>
+    </div>
+  </div>
+</div>
