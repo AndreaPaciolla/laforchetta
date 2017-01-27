@@ -21,11 +21,13 @@ import {DatePickerModule} from "ng2-datepicker/index";
 import {CurrentUserService} from "./user/current-user.service";
 import { RegistrationComponent } from './registration/registration.component';
 import { UsersOverviewComponent } from './users-overview/users-overview.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'restaurants', component: RestaurantsComponent, pathMatch: 'full' },
   { path: 'restaurant-details/:id', component: RestaurantDetailsComponent, pathMatch: 'full' },
+  { path: 'edit-user/:id', component: EditUserComponent, pathMatch: 'full' },
   { path: 'user-details/:id', component: UserDetailsComponent, pathMatch: 'full' },
   { path: 'registration', component: RegistrationComponent, pathMatch: 'full' },
   { path: 'users-overview', component: UsersOverviewComponent, pathMatch: 'full' },
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     RestaurantNameFilter,
     UserDetailsComponent,
     RegistrationComponent,
-    UsersOverviewComponent
+    UsersOverviewComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

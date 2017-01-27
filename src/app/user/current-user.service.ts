@@ -22,6 +22,11 @@ export class CurrentUserService {
     return undefined;
   }
 
+  getLoggedUserEmail(): string {
+    this.readFromLocalStorage();
+    return this.loggedUserEmail;
+  }
+
   isLogged() {
     this.readFromLocalStorage();
     return (this.users.filter( user => user.email === this.loggedUserEmail ).length) ? true : false;

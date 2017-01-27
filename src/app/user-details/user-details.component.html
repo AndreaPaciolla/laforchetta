@@ -1,4 +1,9 @@
 <a [routerLink]="['/users-overview']">< Come back to users</a>
+<br>
+<small *ngIf="userLoggedEmail && user.email == userLoggedEmail">
+  <a [routerLink]="['/edit-user', user.id]">< Edit your account</a>
+</small>
+
 <h2>User {{user.name}} {{user.surname}}</h2>
 <table>
   <thead>

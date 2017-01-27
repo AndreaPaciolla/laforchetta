@@ -1,3 +1,5 @@
+<h2>Registration form</h2>
+
 <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
   Your name: <input type="text" formControlName="name">
   Your surname: <input type="text" formControlName="surname">
