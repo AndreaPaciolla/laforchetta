@@ -32,6 +32,8 @@ export class RestaurantDetailsComponent implements OnInit {
   public reservations: any;
   public isLogged: boolean;
   public restaurantReservations: Array<Object>;
+  public freeSeats: number;
+  public reservedSeats: number = 0;
 
   constructor(private restaurantsService: RestaurantDetailsService,
               public currentUserService: CurrentUserService,
@@ -60,6 +62,9 @@ export class RestaurantDetailsComponent implements OnInit {
     ];
 
     this.selectLang('en');
+
+    this.reservationTimeframe = '19';
+    this.reservationPax = 1;
   }
 
   isCurrentLang(lang: string) {
@@ -79,7 +84,7 @@ export class RestaurantDetailsComponent implements OnInit {
   }
 
   addReservation(date: IDatePicker, timeframe: any, pax: number) {
-    if (date == undefined || Moment(date.formatted).isBefore(new Date())) {
+    if (date == undefined || Moment(date.formatted).isBefore( Moment(new Date()).format('YYYY-MM-D') )) {
       alert("Select valid date");
       return;
     }
@@ -113,6 +118,19 @@ export class RestaurantDetailsComponent implements OnInit {
     }
   }
 
+  updateReservedAndFreeSeatsForThisDate($event: IDatePicker, timeframe: number) {
+    console.log($event);
+    let totalReservedSeatsForThisRestaurant: Array<Object> = this.reservationService.getReservationForRestaurant(this.restaurant.slug);
+    if(totalReservedSeatsForThisRestaurant.length) {
+      this.reservedSeats = totalReservedSeatsForThisRestaurant
+        .filter(reservation => reservation.date == $event.formatted && reservation.timeframe == timeframe)
+        .reduce((totalBookedPax, currentReservation) => {
+          return totalBookedPax += currentReservation.pax
+        }, 0);
+    }
+    this.freeSeats = this.restaurant.posti - this.reservedSeats;
+  }
+
   private confirmReservation(date: IDatePicker, timeframe: any, pax: number) {
     this.reservations.push({
       user: localStorage.getItem('logged_user_email'),
@@ -125,6 +143,15 @@ export class RestaurantDetailsComponent implements OnInit {
     localStorage.setItem('reservations', JSON.stringify(this.reservations));
 
     alert("Reservation done! " + this.restaurant.nome + " on " + date.formatted + " at " + timeframe);
+
+    // reset all the form information
+    this.dateSelected = undefined;
+    this.reservationPax = undefined;
+    this.reservationTimeframe = undefined;
+
+    window.setTimeout( ()=> {
+      this.restaurantReservations = this.reservationService.getReservationForRestaurant(this.restaurant.slug);
+    }, 1000);
   }
 
 

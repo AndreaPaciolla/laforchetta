@@ -33,13 +33,18 @@ export class LoginComponent implements OnInit {
   save(model: IUser, isValid: boolean) {
     this.submitted = true; // set form submit to true
     // check if model is valid
-    // if valid, call API to save customer
-    if (typeof(Storage) !== "undefined") {
-      localStorage.setItem("logged_user_email", model.email);
-      this.router.navigate(['/restaurants']);
+    if(JSON.parse(localStorage.getItem('users')).filter(user => user.email == model.email && user.password == model.password).length > 0) {
+      // if valid, call API to save customer
+      if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("logged_user_email", model.email);
+        this.router.navigate(['/restaurants']);
+      } else {
+        // Sorry! No Web Storage support..
+      }
     } else {
-      // Sorry! No Web Storage support..
+      alert("Login error. Please check your information.");
     }
+
     console.log(model, isValid);
   }
 

@@ -2,14 +2,27 @@
   <a [routerLink]="['/restaurants']">< Go back to restaurants</a>
 </small>
 <h4>{{restaurant.nome}}</h4>
-<p>
-  <i>{{restaurant.via}}, {{restaurant.citta}}</i><br>
-  Total Seats {{restaurant.posti}}
-</p>
+<p><i>{{restaurant.via}}, {{restaurant.citta}}</i><br></p>
+<table>
+  <thead>
+  <tr>
+    <th>Seats</th>
+    <th *ngIf="dateSelected">Booked on this date/timeframe</th>
+    <th *ngIf="dateSelected">Free on this date/timeframe</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{restaurant.posti}}</td>
+    <td *ngIf="dateSelected">{{reservedSeats}}</td>
+    <td *ngIf="dateSelected">{{freeSeats}}</td>
+  </tr>
+  </tbody>
+</table>
 
 <!-- Reservation information -->
-<div *ngIf="restaurantReservations.length">This restaurant is actually booked on:</div>
-<div *ngIf="!restaurantReservations.length">This restaurant is freely bookable</div>
+<div *ngIf="restaurantReservations.length"><h4>This restaurant is actually booked on:</h4></div>
+<div *ngIf="!restaurantReservations.length"><h4>This restaurant is freely bookable</h4></div>
 <table *ngIf="restaurantReservations.length">
   <thead>
   <tr>
@@ -39,14 +52,14 @@
   </div>
   <div class="row">
     <div class="column column-30">
-      <ng2-datepicker [(ngModel)]="dateSelected"></ng2-datepicker><br>
+      <ng2-datepicker [(ngModel)]="dateSelected" (ngModelChange)="updateReservedAndFreeSeatsForThisDate(dateSelected, reservationTimeframe)"></ng2-datepicker><br>
     </div>
     <div class="column column-30">
       Pax <span><input type="number" min="1" max="{{restaurant.posti}}" [(ngModel)]="reservationPax"></span>
     </div>
     <div class="column column-30">
-      19:00-21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="19" checked />
-      oltre 21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" value="21" />
+      19:00-21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" (ngModelChange)="updateReservedAndFreeSeatsForThisDate(dateSelected, reservationTimeframe)" value="19" checked />
+      oltre 21:00<input type="radio" name="reservationTimeframe" [(ngModel)]="reservationTimeframe" (ngModelChange)="updateReservedAndFreeSeatsForThisDate(dateSelected, reservationTimeframe)" value="21" />
     </div>
   </div>
   <div class="row">
