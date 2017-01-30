@@ -54,6 +54,7 @@ export class RestaurantDetailsComponent implements OnInit {
 
     window.setTimeout( ()=> {
       this.restaurantReservations = this.reservationService.getReservationForRestaurant(this.restaurant.slug);
+      this.restaurant.menus = this.restaurant['menus-en'];
     }, 1000);
 
     this.supportedLangs = [
@@ -76,11 +77,12 @@ export class RestaurantDetailsComponent implements OnInit {
     // set current lang;
     this._translate.use(lang);
     this.refreshText();
+    this.restaurant.menus = this.restaurant['menus-'+lang];
   }
 
   refreshText() {
     // refresh translation when language change
-    this.translatedText = this._translate.instant('hello world');
+    this.translatedText = this._translate.instant('');
   }
 
   addReservation(date: IDatePicker, timeframe: any, pax: number) {

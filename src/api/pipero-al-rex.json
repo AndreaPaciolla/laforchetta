@@ -15,7 +15,7 @@
   "fascia_prezzo":"economico",
   "review":5,
   "posti":36,
-  "menus":[
+  "menus-it":[
      {
         "menu":"menu degustazione",
         "antipasti":[
@@ -67,5 +67,58 @@
            }
         ]
      }
+  ],
+  "menus-en": [
+    {
+      "menu": "tasting menu",
+      "antipasti":[
+        "chips",
+        "Roman olives"
+      ],
+      "primi": [
+
+      ],
+      "secondi": [
+        "bloody steak",
+        "Pizza"
+      ],
+      "allergeni": [
+        "Cereals containing gluten",
+        "Crustaceans and products based crustaceans",
+        "Fish and products based on fish",
+        "Peanuts and peanut-based products",
+        "Soybean and soy-based products",
+        "Milk and milk-based products",
+        "Nuts",
+        "Celery and celery based products",
+        "Mustard and mustard-based products",
+        "Sesame seeds and products based on sesame seeds",
+        "Sulphur dioxide and sulphites",
+        "Lupin and products based on lupins",
+        "Shellfish and products based on molluscs"
+      ],
+      "bevande":[
+        "water",
+        "wine"
+      ],
+      "prezzo": 60.00,
+      "sconti": [
+        {
+          "tipo": "day",
+          "valore":[
+            "Monday",
+            "Thursday"
+          ],
+          "sconto": 0.20
+        },
+        {
+          "tipo": "Time",
+          "valore":[
+            "19-21"
+          ],
+          "sconto": 0.1
+        }
+      ]
+    }
   ]
 }

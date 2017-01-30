@@ -16,7 +16,7 @@
   "fascia_prezzo":"economico",
   "review":3.5,
   "posti":25,
-  "menus":[
+  "menus-it":[
     {
       "menu":"menu degustazione",
       "antipasti":[
@@ -55,6 +55,49 @@
             "19-21"
           ],
           "sconto":0.1
+        }
+      ]
+    }
+  ],
+  "menus-en": [
+    {
+      "menu": "tasting menu",
+      "antipasti":[
+        "Tris of fish tartare and carpaccio",
+        "Flan with artichokes and tomato burratina dry"
+      ],
+      "primi": [
+        "Spaghetti with sea urchin",
+        "Cavatelli with pistachio and red shrimp of Gallipoli"
+      ],
+      "secondi": [
+        "Bluefin tuna crusted with almonds and caramelized red onion and sour"
+      ],
+      "allergeni": [
+        "Cereals containing gluten",
+        "Fish and products based on fish",
+        "Sesame seeds and products based on sesame seeds"
+      ],
+      "bevande":[
+        "water",
+        "wine"
+      ],
+      "prezzo": 40.00,
+      "sconti": [
+        {
+          "tipo": "day",
+          "valore":[
+            "Monday",
+            "Thursday"
+          ],
+          "sconto": 0.20
+        },
+        {
+          "tipo": "Time",
+          "valore":[
+            "19-21"
+          ],
+          "sconto": 0.1
         }
       ]
     }

@@ -17,7 +17,7 @@
   "fascia_prezzo":"economico",
   "review":3,
   "posti":36,
-  "menus":[
+  "menus-it":[
     {
       "menu":"menu pizza",
       "antipasti":[
@@ -109,6 +109,104 @@
           "valore":[
             "martedì",
             "mercoledì"
+          ],
+          "sconto":0.50
+        }
+      ]
+    }
+  ],
+  "menus-en":[
+    {
+      "menu":"menu pizza",
+      "antipasti":[
+        "chips",
+        "fried olives"
+      ],
+      "primi":[
+
+      ],
+      "secondi":[
+        "one pizza"
+      ],
+      "allergeni":[
+        "Cereals containing gluten",
+        "Crustaceans and products based crustaceans",
+        "Fish and products based on fish",
+        "Peanuts and peanut-based products",
+        "Soy and soy-based products",
+        "Milk and milk-based products",
+        "Nuts",
+        "Celery and celery based products",
+        "Mustard and mustard-based products",
+        "Sesame seeds and products based on sesame seeds",
+        "Sulphur dioxide and sulphites",
+        "Lupin and products based on lupins",
+        "Shellfish and products based on molluscs"
+      ],
+      "bevande":[
+        "water",
+        "coke"
+      ],
+      "prezzo":17.00,
+      "sconti":[
+        {
+          "tipo":"day",
+          "valore":[
+            "monday",
+            "thursday"
+          ],
+          "sconto":0.20
+        },
+        {
+          "tipo":"hourly",
+          "valore":[
+            "19-21"
+          ],
+          "sconto":0.1
+        }
+      ]
+    },
+    {
+      "menu":"menu milanese",
+      "antipasti":[
+        "polenta with deer"
+      ],
+      "primi":[
+        "risotto milanese"
+      ],
+      "secondi":[
+        "cotoletta milanese"
+      ],
+      "dolci":[
+        "barbajada"
+      ],
+      "allergeni":[
+        "Cereals containing gluten",
+        "Crustaceans and products based crustaceans",
+        "Fish and products based on fish",
+        "Peanuts and peanut-based products",
+        "Soy and soy-based products",
+        "Milk and milk-based products",
+        "Nuts",
+        "Celery and celery based products",
+        "Mustard and mustard-based products",
+        "Sesame seeds and products based on sesame seeds",
+        "Sulphur dioxide and sulphites",
+        "Lupin and products based on lupins",
+        "Shellfish and products based on molluscs"
+      ],
+      "bevande":[
+        "water",
+        "coke",
+        "coffee"
+      ],
+      "prezzo":45.00,
+      "sconti":[
+        {
+          "tipo":"day",
+          "valore":[
+            "tuesday",
+            "wedsday"
           ],
           "sconto":0.50
         }
